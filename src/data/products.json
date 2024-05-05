@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Zapatillas Nike Air Max",
+        "description":
+          "Las Zapatillas Nike Air Max Intrlk brindan soporte y estabilidad a tus pisadas, para que disfrutes a pleno de cada carrera y mejores tu rendimiento en cada entrenamiento.La capellada de tela y cuero sintético aporta transpirabilidad y es sumamente duradera.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw7c433248/products/NI_DC5421-002/NI_DC5421-002-1.JPG",
+        "price": 180000,
+        "category":"shoes"
+      },
+      {
+        "id": 2,
+        "title": "Zapatillas adidas Lite Racer",
+        "description":
+          "Las Zapatillas adidas Lite Racer Byd 2.0 son ideales para carreras cortas y largas. Sus materiales respirables y diseño moderno se combinan con una suela de gran adherencia a las superficies y cordones que las vuelven fáciles de poner y sacar si estás apurado.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwec28aab0/products/AD_GZ8213/AD_GZ8213-1.JPG",
+        "price": 120000,
+        "category":"shoes"
+      },
+      {
+        "id": 3,
+        "title": "Zapatillas Nike Waffle One",
+        "description":
+          "Lo simple no va con vos. Por eso, te subís a las Zapatillas Nike Waffle One que te llenan de estilo y energía. Con un legado del running pero con innovaciones para que te destaques en las pistas pero también mientras que recorres la ciudad.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw4758ee1a/products/NI_DM7604-600/NI_DM7604-600-1.JPG",
+        "price": 170000,
+        "category":"shoes"
+      },
+      {
+        "id": 4,
+        "title": "Zapatillas Nike Max Dawn",
+        "description":
+          "Las Zapatillas Nike Air Max Dawn están confeccionadas con materiales reciclables. Además, la gamuza sintética y los demás materiales combinan el estilo vintage del running con nuevas tendencias. La unidad Nike Air en el talón brinda estabilidad y amortiguación de alto rendimiento en cada pisada.",
+        "img": "https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw5ecbea5c/products/NI_DH4656-001/NI_DH4656-001-1.JPG?sw=400&sh=400",
+        "price": 140000,
+        "category":"shoes"
+      }
+]

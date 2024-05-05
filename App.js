@@ -1,20 +1,26 @@
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView } from 'react-native';
-import FlatCards from './components/FlatCards';
+import { StyleSheet, SafeAreaView} from 'react-native';
+import Home from "./src/screens/Home.jsx";
+import {colors} from "./src/constants/colors.js"
+import FlatCards from './src/components/FlatCards';
 import React from "react"
+
 
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <SafeAreaView style={styles.container}>
+        <Home/>
         <FlatCards/>
-      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-
-
+  container: {
+    marginTop: 30,
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: colors.teal200,
+  },
 
 });
