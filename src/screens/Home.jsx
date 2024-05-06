@@ -1,18 +1,20 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import { colors } from "../constants/colors"
-import CategoryItem from "../components/CategoryItem"
+import CategoryItem from "../components/CategoryItem.jsx"
 import categories from "../data/categories.json"
-import Header from "../components/Header.jsx";
 
-const Home = () => {
+const Home = ({setCategorySelected}) => {
   return (
     <View style={styles.flatListContainer}>
-      <Header title={"MyShoes"}/>
       <FlatList
         showsVerticalScrollIndicator={false}
         keyExtractor = {elemntoDeMiArray => elemntoDeMiArray}
         data = {categories.sort()}
-        renderItem = {({item}) => <CategoryItem category={item}/>}
+        renderItem = {({item}) => (
+        <CategoryItem 
+        selectCategory={setCategorySelected} 
+        category={item}
+        />)}
       />
     </View>
   )

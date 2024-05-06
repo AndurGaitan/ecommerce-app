@@ -34,5 +34,70 @@
         "img": "https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw5ecbea5c/products/NI_DH4656-001/NI_DH4656-001-1.JPG?sw=400&sh=400",
         "price": 140000,
         "category":"shoes"
+      },
+      {
+        "id": 5,
+        "title": "Gorra New Era Seasonal",
+        "description":
+          "Para agregar a tu marca personal, la Gorra New Era Seasonal 9Forty Manchester United es el accesorio ideal. Su visera curva, confección en paneles crean un look ideal para cualquier plan, además de dar un ajuste cómodo e ideal.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwc5757a93/products/NW_W302MU006U830/NW_W302MU006U830-1.JPG",
+        "price": 90000,
+        "category":"caps"
+      },
+      {
+        "id": 6,
+        "title": "Mochila Puma Phase",
+        "description":
+          "La Mochila Puma Phase es un accesorio ideal para acompañarte al gimnasio y que lleves lo justo, sin perder comodidad. Presenta un diseño de estilo y a la vez, funcional. Sus correas ajustables y acolchadas te permiten llevarla sin perder la comodidad en ningún momento. Su logo reflectante, te brinda seguridad en momentos de poca luz.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwcc664bee/products/PU_075487-79/PU_075487-79-1.JPG",
+        "price": 130000,
+        "category":"backpack"
+      },
+      {
+        "id": 7,
+        "title": "Zapatillas Nike Huarache",
+        "description":
+          "Las Zapatillas Nike Air Huarache tienen todo lo necesario para que atravieses tu día con la mayor comodidad posible. La capellada está compuesta por un mix de materiales de alta calidad que aportan transpirabilidad a tus pasos y una durabilidad superior.",
+        "img": "https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw50afdaec/products/NI_DD1068-003/NI_DD1068-003-1.JPG?sw=400&sh=400",
+        "price": 160000,
+        "category":"shoes"
+      },
+      {
+        "id": 8,
+        "title": "Mochila adidas Small",
+        "description":
+          "La Mochila Adidas es un accesorio ideal para acompañarte al gimnasio y que lleves lo justo, sin perder comodidad. Presenta un diseño de estilo y a la vez, funcional. Sus correas ajustables y acolchadas te permiten llevarla sin perder la comodidad en ningún momento. Su logo reflectante, te brinda seguridad en momentos de poca luz.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwe123651c/products/AD_GD4571/AD_GD4571-1.JPG",
+        "price": 110000,
+        "category":"backpack"
+      },
+      {
+        "id": 9,
+        "title": "Zapatillas LC Sportif Veloce",
+        "description":
+          " Inspiradas en las un calzado de running, pero para ser trasladadas a tu día a día en la ciudad, las Zapatillas Le Coq Sportif Veloce son tu mejor elección. Están confeccionadas en una parte superior textil que da comodidad a tus pies, permitiendo libertad de movimiento",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwa59c4604/products/LE_2210343/LE_2210343-1.JPG",
+        "price": 160000,
+        "category":"shoes"
+      },
+      {
+        "id": 10,
+        "title": "Mochila Nike Heritage",
+        "description":
+          "Disfruta de tu rutina llevando todo lo necesario con vos gracias a la Mochila Nike Heritage, diseñada con un bolsillo externo con cierre para tener a mano lo indispensable y un compartimento interno para guardar tu notebook",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwf059618f/products/NI_DM2158-010/NI_DM2158-010-1.JPG",
+        "price": 150000,
+        "category":"backpack"
+      },
+      {
+        "id": 11,
+        "title": "Gorra New Era 950",
+        "description":
+          "Para agregar a tu marca personal, la Gorra New Era 950 Ss Los Dodgers es el accesorio ideal. Su visera curva, corte amplio y confección en paneles crean un look ideal para cualquier plan, además de dar un ajuste cómodo e ideal.",
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw5a474955/products/NW_W306LD007U550/NW_W306LD007U550-1.JPG",
+        "price": 80000,
+        "category":"caps"
       }
+
+
 ]
