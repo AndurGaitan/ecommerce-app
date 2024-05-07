@@ -19,7 +19,6 @@ const ProductItem = ({
         />
         <View style={styles.cardBody}>
           <Text style={styles.cardTitle}>{product.title}</Text>
-          <Text style={styles.cardDescription}>{product.description}</Text>
           <View style={styles.priceContainer}>
             <View>
               <Text style={styles.cardLabel}>${product.price}</Text>
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 350,
-    height: 350,
+    height: 300,
     borderRadius: 6,
     marginVertical: 12,
     marginHorizontal: 16,

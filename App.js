@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
 import Home from "./src/screens/Home.jsx";
 import { colors } from "./src/constants/colors.js"
 //import FlatCards from './src/components/FlatCards';
@@ -39,10 +39,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop:Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,
     alignItems: "center",
     backgroundColor: colors.teal200,
+
   },
 
 });

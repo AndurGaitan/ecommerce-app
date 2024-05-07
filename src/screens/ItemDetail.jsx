@@ -13,18 +13,18 @@ import {
     console.log(idSelected)
   
     const [product, setProduct] = useState(null)
-    // // const [orientation, setOrientation] = useState("portrait")
-    // // const { width, height } = useWindowDimensions()
+    const [orientation, setOrientation] = useState("portrait")
+    const { width, height } = useWindowDimensions()
   
-    // //Landscape = horizontal
-    // //Portrait = vertical
+    //Landscape = horizontal
+    //Portrait = vertical
   
-    // // useEffect(() => {
-    // //   if (width > height) setOrientation("landscape")
-    // //   else setOrientation("portrait")
-    // // }, [width, height])
+    useEffect(() => {
+      if (width > height) setOrientation("landscape")
+      else setOrientation("portrait")
+    }, [width, height])
   
-    // // console.log(orientation)
+    console.log(orientation)
   
     useEffect(() => {
       //Encontrar el producto por su id
@@ -42,17 +42,17 @@ import {
         {product ? (
           <View
             style={
-            //orientation === "portrait"?
+            orientation === "portrait"?
             styles.mainContainer
-               //: styles.mainContainerLandscape
+              : styles.mainContainerLandscape
             }
           >
             <Image
-              source={{ uri: product.images[0] }}
-              //style={orientation === "portrait" ? styles.image : styles.imageLandscape}
+              source={{ uri: product.img }}
+              style={orientation === "portrait" ? styles.image : styles.imageLandscape}
               resizeMode="cover"
             />
-            <View //style={orientation === "portrait" ? styles.textContainer : styles.textContainerLandscape}
+            <View style={orientation === "portrait" ? styles.textContainer : styles.textContainerLandscape}
             >
               <Text>{product.title}</Text>
               <Text>{product.description}</Text>
