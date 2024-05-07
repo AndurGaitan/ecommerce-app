@@ -1,12 +1,16 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Card from "./Card";
 import { colors } from "../constants/colors";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ 
+  product, 
+  setProductSelected = () => {},
+  setItemIdSelected = () => {} 
+}) => {
   return (
     <Card>
-      <TouchableOpacity style={[styles.card, styles.cardElevated]}>
+      <Pressable style={[styles.card, styles.cardElevated]} onPress={() => setItemIdSelected(product.id)}>
         <Image
           source={{
             uri: product.img,
@@ -32,7 +36,7 @@ const ProductItem = ({ product }) => {
           style = {styles.image}
           source={{uri: product.img}}
         /> */}
-      </TouchableOpacity>
+      </Pressable>
     </Card>
   );
 };
