@@ -5,10 +5,15 @@ import ProductItem from "../components/ProductItem"
 import Search from "../components/Search"
 import { useState, useEffect } from "react"
 
-const ItemListCategory = ({categorySelected = "", setCategorySelected = () => {}, setItemIdSelected = () => {}}) => {
+const ItemListCategory = ({
+  setCategorySelected = () => {},
+  navigation,
+  route
+}) => {
   const [keyWord, setKeyword] = useState("")
   const [productsFiltered, setProductsFiltered] = useState([])
   const [error, setError] = useState("")
+  const { category: categorySelected } = route.params
 
   useEffect(()=> {
     regex= /\d/
@@ -26,10 +31,10 @@ const ItemListCategory = ({categorySelected = "", setCategorySelected = () => {}
 
     return(
         <View style={styles.flatListContainer}>
-          <Search error = {error} onSearch={setKeyword} goBack={() => setCategorySelected("")}/>
+          <Search error = {error} onSearch={setKeyword} goBack={() => navigation.goBack()}/>
           <FlatList
             data = {productsFiltered}
-            renderItem = {({item})=> <ProductItem product={item} setItemIdSelected={setItemIdSelected}/>}
+            renderItem = {({item})=> <ProductItem product={item} navigation={navigation}/>}
             keyExtractor = {(producto) => producto.id}
           />
         </View>
