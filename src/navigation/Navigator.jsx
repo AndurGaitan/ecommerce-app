@@ -6,37 +6,16 @@ import Home from '../screens/Home'
 import ItemListCategory from '../screens/ItemListCategory'
 import ItemDetail from '../screens/ItemDetail'
 import Header from '../components/Header'
+import HomeStackNavigator from './HomeStackNavigator'
+import BottomTabNavigator from './BottomTabNavigator'
 
 const Stack = createNativeStackNavigator()
 
 const Navigator = () => {
   return (
     <NavigationContainer>
-        <Stack.Navigator
-            initialRouteName='Home'
-            screenOptions = {
-                ({route}) => (
-                    {
-                        header: () => {
-                            return <Header title={route.name === "Home" ? "Categories" : route.name === "ItemListCategory" ? route.params.category : "Detail" }/>
-                        }
-                    }
-                )
-            }
-        >
-            <Stack.Screen
-                component={Home}
-                name='Home'
-            />
-            <Stack.Screen 
-                component={ItemListCategory}
-                name='ItemListCategory'
-            />
-            <Stack.Screen
-                component={ItemDetail}
-                name="ItemDetail"
-            />
-        </Stack.Navigator>
+        {/* <HomeStackNavigator/> */}
+        <BottomTabNavigator/>
     </NavigationContainer>
   )
 }
