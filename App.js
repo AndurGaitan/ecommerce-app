@@ -3,6 +3,8 @@ import { colors } from "./src/constants/colors.js"
 import React from "react"
 import { useState } from 'react';
 import Navigator from './src/navigation/Navigator.jsx';
+import { Provider } from 'react-redux';
+import store from "./src/store/index.js"
 
 
 
@@ -12,7 +14,9 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Navigator/>
+      <Provider store={store}>
+        <Navigator/>
+      </Provider>
     </SafeAreaView>
   );
 }
