@@ -1,9 +1,9 @@
-import { FlatList, StyleSheet, Text, View } from "react-native"
+import { FlatList, StyleSheet, View } from "react-native"
 import { colors } from "../constants/colors"
-import products from "../data/products.json"
 import ProductItem from "../components/ProductItem"
 import Search from "../components/Search"
 import { useState, useEffect } from "react"
+import {useGetProductsByCategoryQuery} from "../services/shopService.js"
 
 const ItemListCategory = ({
   setCategorySelected = () => {},
@@ -13,8 +13,11 @@ const ItemListCategory = ({
   const [keyWord, setKeyword] = useState("")
   const [productsFiltered, setProductsFiltered] = useState([])
   const [error, setError] = useState("")
+  
   const { category: categorySelected } = route.params
 
+  const {data: productsFeched, error: errorFromFetch, isLoading} = useGetProductsByCategoryQuery(categorySelected)
+  
   useEffect(()=> {
     regex= /\d/
     const hasDigits = (regex.test(keyWord))
@@ -23,11 +26,14 @@ const ItemListCategory = ({
       setError("Don't use digits")
       return
     }
-    const productsPrefiltered = products.filter(product => product.category === categorySelected)
-    const productsFilter = productsPrefiltered.filter(product => product.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase()))
-    setProductsFiltered(productsFilter)
-    setError("")
-  }, [keyWord, categorySelected])
+  
+    if(!isLoading){
+      const productsFilter = productsFeched.filter(product => product.title.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase()))
+      setProductsFiltered(productsFilter)
+      setError("")
+    }
+
+  }, [keyWord, categorySelected, productsFeched, isLoading])
 
     return(
         <View style={styles.flatListContainer}>

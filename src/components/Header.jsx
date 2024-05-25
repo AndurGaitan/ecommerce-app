@@ -4,7 +4,6 @@ import { colors } from '../constants/colors'
 import { useSelector } from 'react-redux'
 
 const Header = ({route}) => {
-  //const categorySelected = useSelector(state => state.shop.value.categorySelected)
   return (
     <View style={styles.container}>
       <Text style = {styles.text}>{route.name}</Text>

@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: "Josefin",
         fontSize: 19,
-        color: colors.teal400,
+        color: colors.teal900,
     },
     text2: {
         fontFamily: "Josefin",
         fontSize: 14,
-        color: colors.teal600,
+        color: colors.teal900,
     },
 });

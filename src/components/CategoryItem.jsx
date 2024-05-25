@@ -3,6 +3,7 @@ import React from 'react'
 import { colors } from '../constants/colors';
 import Card from './Card';
 import { useDispatch, useSelector } from "react-redux"
+import { setCategorySelected } from '../features/Shop/shopSlice';
 
 const CategoryItem = ({category, navigation}) => {
 
@@ -14,9 +15,9 @@ const CategoryItem = ({category, navigation}) => {
   }
 
   return (
-    <Card style={styles.categoryContainer}>
+    <Card style={styles.containerCart}>
       <Pressable
-      onPress={{handleNavigate}}
+      onPress={handleNavigate}
       >
       <Text style = {styles.text}>{category}</Text>
 
@@ -29,18 +30,22 @@ const CategoryItem = ({category, navigation}) => {
 export default CategoryItem
 
 const styles = StyleSheet.create({
-  categoryContainer: {
-    backgroundColor: colors.teal600,
-    width: 250,
-    height: 40,
-    shadowColor: "#000",
-    shadowOffset:{
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
+containerCart: {
+  backgroundColor: colors.teal600,
+        width: 250,
+        height: 40,
+        shadowColor: colors.platinum,
+        shadowOffset: {
+          width: 4,
+          height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 4,
+        marginRight: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+
 },
 text: {
     color: colors.teal900,

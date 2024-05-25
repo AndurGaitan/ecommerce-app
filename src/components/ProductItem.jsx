@@ -17,7 +17,7 @@ const ProductItem = ({
   }
   return (
     <Card>
-      <Pressable style={[styles.card, styles.cardElevated]} onPress={{handleNavigate}}>
+      <Pressable style={[styles.card, styles.cardElevated]} onPress={handleNavigate}>
         <Image
           source={{
             uri: product.img,
@@ -29,9 +29,6 @@ const ProductItem = ({
           <View style={styles.priceContainer}>
             <View>
               <Text style={styles.cardLabel}>${product.price}</Text>
-            </View>
-            <View>
-              <Text style={styles.cardPlus}>+</Text>
             </View>
           </View>
         </View>
