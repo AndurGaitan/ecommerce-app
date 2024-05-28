@@ -1,11 +1,10 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import { colors } from "../constants/colors"
 import CategoryItem from "../components/CategoryItem.jsx"
-import { useGetCategoryQuery } from "../services/shopService.js"
+import { useGetCategoriesQuery } from "../services/shopService.js"
 
 const Home = ({navigation}) => {
-  const {data: categories, error, isLoading} = useGetCategoryQuery()
-  console.log(categories)
+  const {data: categories, error, isLoading} = useGetCategoriesQuery()
   return (
     <View style={styles.flatListContainer}>
       <FlatList
