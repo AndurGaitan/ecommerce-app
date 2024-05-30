@@ -31,7 +31,22 @@ export const shopApi = createApi({
                 method: 'POST',
                 body: order
             })
-        })
+        }),
+        getProfileImage: builder.query({
+            query: (localId) => `profileImages/${localId}.json`,
+            providesTags: ['profileImageGet']
+        }),
+        //We make a PUT request for not creating additional key, because de localId is already an unique key.
+        postProfileImage: builder.mutation({
+            query: ({image, localId}) => ({
+                url: `profileImages/${localId}.json`,
+                method: "PUT",
+                body: {
+                    image: image
+                },
+            }),
+            invalidatesTags: ['profileImageGet'] //Invalidates will trigger a refetch on profileImageGet
+        }),
     }),
 })
 
@@ -39,5 +54,7 @@ export const {
     useGetCategoriesQuery,
     useGetProductByIdQuery,
     useGetProductsByCategoryQuery,
-    usePostOrderMutation
+    usePostOrderMutation,
+    useGetProfileImageQuery,
+    usePostProfileImageMutation,
 } = shopApi

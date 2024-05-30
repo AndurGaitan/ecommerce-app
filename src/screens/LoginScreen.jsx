@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
                     email: result.data.email,
                     idToken: result.data.idToken,
                 })
-            )
+            ) 
         }
     }, [result])
 

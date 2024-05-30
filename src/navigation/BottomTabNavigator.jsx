@@ -1,15 +1,14 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import HomeStackNavigator from "./HomeStackNavigator.jsx"
+import HomeStackNavigator from "./HomeStackNavigator"
 import { colors } from "../constants/colors"
-import CartStack from "./CartStackNavigator.jsx"
-import OrderStack from "./OrderStackNavigator.jsx"
+import CartStack from "./CartStackNavigator"
+import OrderStack from "./OrderStackNavigator"
 import Header from "../components/Header"
 import { FontAwesome5, FontAwesome6 } from "@expo/vector-icons"
 import { Ionicons } from "@expo/vector-icons"
-import CartTemp from "../screens/CartTemp"
-import OrdersTemp from "../screens/OrdersTemp"
+import MyProfileStackNavigator from "./MyProfileStackNavigator"
 
 const Tab = createBottomTabNavigator()
 
@@ -71,23 +70,19 @@ const BottomTabNavigator = () => {
                     },
                 }}
             />
-            {/* <Tab.Screen
-                name="Orders"
-                component={OrdersTemp}
+            <Tab.Screen 
+                name="My profile"
+                component={MyProfileStackNavigator}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
                             <View>
-                                <Ionicons
-                                    name="receipt"
-                                    size={24}
-                                    color={focused ? "black" : colors.teal600}
-                                />
+                                <Ionicons name="person-circle" size={24} color={ focused ? 'black' : colors.teal100}  />
                             </View>
                         )
                     },
                 }}
-            /> */}
+            />
         </Tab.Navigator>
     )
 }
