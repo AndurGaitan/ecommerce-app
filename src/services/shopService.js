@@ -36,7 +36,6 @@ export const shopApi = createApi({
             query: (localId) => `profileImages/${localId}.json`,
             providesTags: ['profileImageGet']
         }),
-        //We make a PUT request for not creating additional key, because de localId is already an unique key.
         postProfileImage: builder.mutation({
             query: ({image, localId}) => ({
                 url: `profileImages/${localId}.json`,
@@ -45,7 +44,7 @@ export const shopApi = createApi({
                     image: image
                 },
             }),
-            invalidatesTags: ['profileImageGet'] //Invalidates will trigger a refetch on profileImageGet
+            invalidatesTags: ['profileImageGet'] 
         }),
     }),
 })
