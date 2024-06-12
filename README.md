@@ -27,6 +27,7 @@ npm install
 npm start
 
 4. Ejecuta la aplicación en un emulador o dispositivo físico:
+
 npm run android
 # o
 npm run ios
