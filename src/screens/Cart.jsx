@@ -3,6 +3,7 @@ import React from "react"
 import CartItem from "../components/CartItem"
 import { useSelector } from "react-redux"
 import { usePostOrderMutation } from "../services/shopService"
+import { colors } from "../constants/colors"
 
 const Cart = () => {
 
@@ -15,9 +16,7 @@ const Cart = () => {
     const onConfirmOrder = () => {
         try {
             triggerPostOrder({items: CartData, user: localId, total})
-            console.log(result)
         } catch (error) {
-            console.log(error)
             
         }
       
@@ -33,10 +32,10 @@ const Cart = () => {
                 }}
             />
             <View style={styles.totalContainer}>
-                <TouchableOpacity onPress={onConfirmOrder}>
+                <Text>Total: ${total}</Text>
+                <TouchableOpacity onPress={onConfirmOrder} style={styles.confirmButtom}>
                     <Text>Confirm</Text>
                 </TouchableOpacity>
-                <Text>Total: ${total}</Text>
             </View>
         </View>
     )
@@ -46,13 +45,23 @@ export default Cart
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "space-between",
+        justifyContent: "row",
         flex: 1,
         marginBottom: 120,
     },
     totalContainer: {
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+
+    },
+    confirmButtom: {
+        backgroundColor: colors.teal200,
+        borderWidth: 1,
+        width: "80%",
+        marginTop:10,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 8
     },
 })

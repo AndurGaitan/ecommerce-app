@@ -21,7 +21,6 @@ const ItemListCategory = ({
   useEffect(()=> {
     regex= /\d/
     const hasDigits = (regex.test(keyWord))
-    console.log(hasDigits);
     if (hasDigits) {
       setError("Don't use digits")
       return

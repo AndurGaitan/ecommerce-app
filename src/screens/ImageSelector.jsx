@@ -48,7 +48,6 @@ const ImageSelector = ({ navigation }) => {
                 }
             }
         } catch (error) {
-            console.log(error)
         }
     }
     const pickImage = async () => {
@@ -73,7 +72,6 @@ const ImageSelector = ({ navigation }) => {
             }
             
         } catch (error) {
-            console.log(error);
         }
     };
     
@@ -86,7 +84,6 @@ const ImageSelector = ({ navigation }) => {
             }
             navigation.goBack()
         } catch (error) {
-            console.log(error);
         }
     };
 
