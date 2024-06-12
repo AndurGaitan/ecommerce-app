@@ -8,7 +8,6 @@ import { FontAwesome6 } from '@expo/vector-icons';
 
 const Search = ({ onSearch = () => {}, error = "", goBack = () => {} }) => {
   const [keyword, setKeyword] = useState("")
-  console.log(error);
   return (
     <View style={styles.container}>
       <TextInput

@@ -1,21 +1,38 @@
-import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
+import { StyleSheet, SafeAreaView, Platform, StatusBar, use } from 'react-native';
 import { colors } from "./src/constants/colors.js"
 import React from "react"
 import Navigator from './src/navigation/Navigator.jsx';
 import { Provider } from 'react-redux';
 import store from "./src/store/index.js"
+import { dropSessionsTable, initSQLiteDB } from "./src/persistence/index.js"
+import { useFonts } from 'expo-font';
 
+(async ()=> {
+  try {
+      const response = await initSQLiteDB()
+  } catch (error) {
 
+  }
+})()
 
-export default function App() {
+const App = () => {
+  const [fontsLoaded, fontError] = useFonts({
+      Josefin: require("./assets/JosefinSans-Regular.ttf"),
+  })
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <Provider store={store}>
-        <Navigator/>
-      </Provider>
-    </SafeAreaView>
-  );
+  if (!fontsLoaded || fontError) {
+      return null
+  }
+
+  if (fontsLoaded && !fontError) {
+      return (
+          <SafeAreaView style={styles.container}>
+              <Provider store={store}>
+                  <Navigator />
+              </Provider>
+          </SafeAreaView>
+      )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -27,3 +44,5 @@ const styles = StyleSheet.create({
   },
 
 });
+
+export default App

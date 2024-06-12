@@ -4,6 +4,7 @@ import AddButton from "../components/AddButton";
 import { useSelector, useDispatch } from "react-redux";
 import { useGetProfileImageQuery } from "../services/shopService";
 import { clearUser } from "../features/User/userSlice";
+import { truncateSessionsTable } from "../persistence"
 
 const MyProfile = ({navigation}) => {   
     const dispatch = useDispatch()
@@ -15,7 +16,13 @@ const MyProfile = ({navigation}) => {
     };
 
     const signOut = async () => {
-        dispatch(clearUser())
+        try {
+            const response = await truncateSessionsTable()
+            console.log(response);
+            dispatch(clearUser())
+        } catch (error) {
+            console.log({errorSignOutDB: error});
+        }
     }
 
 

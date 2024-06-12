@@ -15,9 +15,10 @@ const CategoryItem = ({category, navigation}) => {
   }
 
   return (
-    <Card style={styles.containerCart}>
+    <Card style={styles.container}>
       <Pressable
       onPress={handleNavigate}
+      style={styles.pressable}
       >
       <Text style = {styles.text}>{category}</Text>
 
@@ -30,22 +31,20 @@ const CategoryItem = ({category, navigation}) => {
 export default CategoryItem
 
 const styles = StyleSheet.create({
-containerCart: {
-  backgroundColor: colors.teal600,
-        width: 250,
-        height: 40,
-        shadowColor: colors.platinum,
-        shadowOffset: {
-          width: 4,
-          height: 4,
-        },
-        shadowOpacity: 0.30,
-        shadowRadius: 4.65,
-        elevation: 4,
-        marginRight: 10,
-        justifyContent: 'center',
-        alignItems: 'center'
+container:{ 
+  flex: 1,
+  flexDirection: 'row',
+  padding: 8
 
+},
+pressable:{
+  flex: 1,
+  justifyContent: "center",
+  backgroundColor: colors.teal200,
+  marginVertical: 6,
+  borderRadius: 6,
+  width:150,
+  height: 150,
 },
 text: {
     color: colors.teal900,

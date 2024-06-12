@@ -17,7 +17,6 @@ export const cartSlice = createSlice({
                 (item) => item.id === payload.id
             )
             if (productRepeated) {
-                console.log(productRepeated)
                 const itemsUpdated = state.value.items.map((item) => {
                     if (item.id === payload.id) {
                         item.quantity += payload.quantity

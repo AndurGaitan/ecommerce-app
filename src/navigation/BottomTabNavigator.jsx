@@ -6,9 +6,10 @@ import { colors } from "../constants/colors"
 import CartStack from "./CartStackNavigator"
 import OrderStack from "./OrderStackNavigator"
 import Header from "../components/Header"
+import MyProfileStackNavigator from "./MyProfileStackNavigator"
 import { FontAwesome5, FontAwesome6 } from "@expo/vector-icons"
 import { Ionicons } from "@expo/vector-icons"
-import MyProfileStackNavigator from "./MyProfileStackNavigator"
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Tab = createBottomTabNavigator()
 
@@ -33,7 +34,7 @@ const BottomTabNavigator = () => {
                                 <FontAwesome5
                                     name="store"
                                     size={24}
-                                    color={focused ? "black" : colors.teal100}
+                                    color={focused ? "black" : colors.teal200}
                                 />
                             </View>
                         )
@@ -47,10 +48,10 @@ const BottomTabNavigator = () => {
                     tabBarIcon: ({ focused }) => {
                         return (
                             <View>
-                                <FontAwesome6
-                                    name="cart-shopping"
+                                <AntDesign 
+                                    name="shoppingcart" 
                                     size={24}
-                                    color={focused ? "black" : colors.teal100}
+                                    color = {focused ? "black" : colors.teal100} 
                                 />
                             </View>
                         )

@@ -42,8 +42,6 @@ const ImageSelector = ({ navigation }) => {
                     quality: 0.2,
                 })
 
-                console.log(result);
-
                 if (!result.canceled){
                     const image = `data:image/jpeg;base64,${result.assets[0].base64}`
                     setImage(image)

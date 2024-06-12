@@ -32,13 +32,6 @@ const ProductItem = ({
             </View>
           </View>
         </View>
-
-        {/* <Text style={styles.textCategory}>{product.title}</Text>
-        <Image 
-          resizeMode='cover'
-          style = {styles.image}
-          source={{uri: product.img}}
-        /> */}
       </Pressable>
     </Card>
   );

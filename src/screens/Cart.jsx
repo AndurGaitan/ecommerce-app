@@ -1,56 +1,41 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native"
+import { FlatList, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
-// import CartData from "../data/cart.json"
 import CartItem from "../components/CartItem"
 import { useSelector } from "react-redux"
 import { usePostOrderMutation } from "../services/shopService"
 
 const Cart = () => {
-    // console.log(CartData);
+
+    const {localId} = useSelector(state => state.auth.value)
 
     const {items: CartData, total} = useSelector(state => state.cart.value)
 
     const [triggerPostOrder, result] = usePostOrderMutation()
-    /* const { items: cartItems, total } = useSelector((state) => state.cart.value)
-    const [triggerPost, result] = usePostOrderMutation()
-
-    console.log(cartItems)
-    console.log(result) */
-
-    /* let total = 0
-    for (const currentItem of CartData) {
-        console.log(currentItem.id);
-        total += currentItem.price * currentItem.quantity
-    } */
-
-    /* onConfirm = () => {
-        triggerPost({
-            total,
-            items: cartItems,
-            user: "userLoggedId",
-            date: new Date().toLocaleString(),
-        })
-    } */
 
     const onConfirmOrder = () => {
-        triggerPostOrder({items: CartData, user: 'Andres', total})
+        try {
+            triggerPostOrder({items: CartData, user: localId, total})
+            console.log(result)
+        } catch (error) {
+            console.log(error)
+            
+        }
+      
     }
-
-    console.log(result);
 
     return (
         <View style={styles.container}>
             <FlatList
                 data={CartData}
-                keyExtractor={(pepe) => pepe.id}
+                keyExtractor={(cart) => cart.id}
                 renderItem={({ item }) => {
                     return <CartItem cartItem={item} />
                 }}
             />
             <View style={styles.totalContainer}>
-                <Pressable onPress={onConfirmOrder}>
+                <TouchableOpacity onPress={onConfirmOrder}>
                     <Text>Confirm</Text>
-                </Pressable>
+                </TouchableOpacity>
                 <Text>Total: ${total}</Text>
             </View>
         </View>

@@ -41,12 +41,10 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Josefin",
         fontSize: 19,
         color: colors.teal900,
     },
     text2: {
-        fontFamily: "Josefin",
         fontSize: 14,
         color: colors.teal900,
     },

@@ -13,7 +13,7 @@ const OrderItem = ({ order }) => {
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
-                    {new Date(order.createdAt).toLocaleString()}
+                    {new Date(order?.createdAt || null).toLocaleString()}
                 </Text>
                 <Text style={styles.text2}>${total}</Text>
             </View>
@@ -43,12 +43,10 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
     },
     text: {
-        fontFamily: "Josefin",
         fontSize: 17,
         color: "black",
     },
     text2: {
-        fontFamily: "Josefin",
         fontSize: 19,
         color: "gray",
     },
